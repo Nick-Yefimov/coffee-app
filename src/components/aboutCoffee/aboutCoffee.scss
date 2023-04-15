@@ -1,0 +1,57 @@
+.about {
+    background: url(../../resources/img/main-bg.png);
+    background-size: cover;
+    width: 100%;
+    min-height: 640px;
+    &__wrapper {
+        display: grid;
+        justify-content: center;
+        margin-top: 111px;
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 40px;
+        color: #FFFFFF;
+    }
+    &__inner {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    &__button {
+        display: grid;
+        justify-content: center;
+    }
+
+    &__btn {
+        padding: 5px;
+        width: 120px;
+        height: 30px;
+        border: 1px solid #FFFFFF;
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .container {
+        display: grid;
+        justify-content: center;
+
+        &__subtitle {
+            margin-top: 34px;
+            color: #fff;
+            font-size: 24px;
+        }
+        &__text {
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+        }
+    }
+}

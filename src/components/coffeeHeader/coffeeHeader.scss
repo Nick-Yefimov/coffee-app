@@ -1,0 +1,12 @@
+.header {
+    background: url(../../resources/img/our-coffee-bg.png) no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 260px;
+    &__title {
+        font-weight: 700;
+        font-size: 40px;
+        color: #FFFFFF;
+        text-align: center;
+    }
+}
