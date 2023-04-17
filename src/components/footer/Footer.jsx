@@ -11,7 +11,7 @@ const Footer = () => {
 				<img src={logo} alt="logo"/>
 				<Link to='/' className="footer__link">Coffee house</Link>
             	<Link to='/ourCoffee' className="footer__link footer__mid">Our coffee</Link>
-				<a href="#" className="footer__link">For your pleasure</a>
+				<Link to='coffeePleasure' className="footer__link">For your pleasure</Link>
 			</div>
 			<div className='inner'>
 				<hr className='inner__line'/>

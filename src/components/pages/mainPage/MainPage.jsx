@@ -1,6 +1,6 @@
 import AboutCoffee from '../../aboutCoffee/AboutCoffee';
 import AboutUs from '../../aboutUs/AboutUs';
-import CoffeeCard from '../../coffeeCard/CoffeeCard';
+import CoffeeBest from '../../coffeeBest/CoffeeBest';
 import Footer from '../../footer/Footer';
 
 
@@ -9,7 +9,7 @@ const MainPage = () => {
         <>
             <AboutCoffee/>
             <AboutUs/>
-            <CoffeeCard/>
+            <CoffeeBest/>
             <Footer/>
         </>
     )

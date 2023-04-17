@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import coffeeCardReducer from '../components/coffeeCard/CoffeeCardSlice';
+import coffeeSlice from '../components/coffeeProducts/coffeeSlice';
 
 
 const stringMiddleWare = () => (next) => (action) => {
@@ -14,7 +14,7 @@ const stringMiddleWare = () => (next) => (action) => {
 
 const store = configureStore({
     reducer: {
-        coffee: coffeeCardReducer
+        coffee: coffeeSlice
     },
     middleware: getDefaultMiddleWare => getDefaultMiddleWare().concat(stringMiddleWare),
     devTools: process.env.NODE_ENV !== 'production'

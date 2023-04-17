@@ -10,7 +10,7 @@ const NavBar = () => {
             <img src={coffeeBeans} alt="logo" />
             <Link to='/' className="nav__link">Coffee house</Link>
             <Link to='/ourCoffee' className="nav__link nav__mid">Our coffee</Link>
-            <a href="#" className="nav__link">For your pleasure</a>
+            <Link to='/coffeePleasure' className="nav__link">For your pleasure</Link>
         </div>
     )   
 }

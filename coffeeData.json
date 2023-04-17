@@ -4,7 +4,7 @@
             "id": 1,
             "title": "AROMISTICO Coffee 1 kg",
             "country": "Kenya",
-            "image": "aromistico.png",
+            "image": "https://github.com/shinigamiii11/coffee-app/blob/master/src/resources/img/aromistico.png?raw=true",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             "price": "6.99"
         },
@@ -12,7 +12,7 @@
             "id": 2,
             "title": "Solimo Coffee Beans 2 kg",
             "country": "Ethiopia",
-            "img": "url(./resources/img/solimo.png)",
+            "image": "https://github.com/shinigamiii11/coffee-app/blob/master/src/resources/img/solimo.png?raw=true",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             "price": "10.73"
         },
@@ -20,7 +20,7 @@
             "id": 3,
             "title": "Presto Coffee Beans 1 kg",
             "country": "Brasil",
-            "img": "url(./resources/img/presto.png)",
+            "image": "https://github.com/shinigamiii11/coffee-app/blob/master/src/resources/img/presto.png?raw=true",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             "price": "15.99"
         },
@@ -28,7 +28,7 @@
             "id": 4,
             "title": "Columbia Coffee Beans 1 kg",
             "country": "Columbia",
-            "img": "url(./resources/img/solimo.png)",
+            "image": "https://github.com/shinigamiii11/coffee-app/blob/master/src/resources/img/solimo.png?raw=true",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             "price": "13.99"
         },
@@ -36,7 +36,7 @@
             "id": 5,
             "title": "Peru Coffee Beans 1 kg",
             "country": "Peru",
-            "img": "url(./resources/img/presto.png)",
+            "image": "https://github.com/shinigamiii11/coffee-app/blob/master/src/resources/img/presto.png?raw=true",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             "price": "10.99"
         },
@@ -44,7 +44,7 @@
             "id": 6,
             "title": "Kenya Coffee Beans 1 kg",
             "country": "Kenya",
-            "img": "url(./resources/img/aromistico.png)",
+            "image": "https://github.com/shinigamiii11/coffee-app/blob/master/src/resources/img/aromistico.png?raw=true",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             "price": "16.99"
         }

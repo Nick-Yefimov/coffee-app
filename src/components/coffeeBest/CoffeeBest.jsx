@@ -1,9 +1,9 @@
 
-import './coffeeCard.scss';
+import './coffeeBest.scss';
 
 import solimo from '../../resources/img/solimo.png';
 
-const CoffeeCard = () => {
+const CoffeeBest = () => {
     
     return (
         <div className='coffee'>
@@ -31,4 +31,4 @@ const CoffeeCard = () => {
     )
 }
 
-export default CoffeeCard;
+export default CoffeeBest;

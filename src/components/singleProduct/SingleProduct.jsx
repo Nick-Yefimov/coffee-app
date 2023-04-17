@@ -2,6 +2,7 @@ import black from '../../resources/img/coffe-logo-black.png';
 import aromistico from '../../resources/img/aromistico-big.jpg';
 import './singleProduct.scss';
 
+
 const SingleProduct = () => {
     return (                       
       <div className='single'>
