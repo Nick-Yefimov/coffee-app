@@ -2,14 +2,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import coffeeSlice from '../components/coffeeProducts/coffeeSlice';
 
 
-const stringMiddleWare = () => (next) => (action) => {
-    if (typeof action === 'string') {
-        return next({
-            type: action
-        })
-    }
-    return next(action)
-};
+// const stringMiddleWare = () => (next) => (action) => {
+//     if (typeof action === 'string') {
+//         return next({
+//             type: action
+//         })
+//     }
+//     return next(action)
+// };
 
 
 const store = configureStore({
