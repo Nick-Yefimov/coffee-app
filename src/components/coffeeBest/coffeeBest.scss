@@ -20,26 +20,4 @@
         font-size: 24px;
         text-align: center;
     }
-    &__card {
-        margin: 40px 0 0 70px;
-        width: 220px;
-        height: 240px;
-        background: rgba(255, 255, 255, 0.65);
-        border-radius: 8px;
-    }
-    &__logo {
-        padding: 22px 35px 15px;
-    }
-    &__name {
-        font-weight: 400;
-        font-size: 14px;
-        text-align: center;
-    }
-    &__price {
-        font-weight: 700;
-        font-size: 14px;
-        text-align: center;
-        color: #000000;
-        margin: 10px 0 0 153px;
-    }
 }
