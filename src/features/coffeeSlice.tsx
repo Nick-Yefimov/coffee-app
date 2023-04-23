@@ -12,7 +12,7 @@ interface coffee {
 
 interface CoffeeState {
     data: coffee[];
-    status: true | false;
+    status: boolean;
     error: string | null;
 }
 
@@ -44,7 +44,7 @@ export const  coffeeSlice = createSlice({
                 state.data = action.payload as coffee[];
             })
             .addCase(fetchCoffee.rejected, (state: CoffeeState, action) => {
-                state.status = true;
+                state.status = false;
                 state.error = action.error.message as string; 
             })
             .addDefaultCase(() => {});
