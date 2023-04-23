@@ -1,4 +1,4 @@
-type coffee = {
+interface coffee {
   id: number;
   title: string;
   price: number;
@@ -7,9 +7,6 @@ type coffee = {
   description: string;
 };
 
-interface GetRequestResponse {
-  data: coffee[];
-};
 
 export const useHttp = () => {
 	const request = async (
@@ -17,7 +14,7 @@ export const useHttp = () => {
 		method: 'GET' | 'POST' | 'PUT' | 'DELETE' = 'GET', 
 		body = null, 
 		headers = {Accept: 'application/json'}
-		): Promise<GetRequestResponse | string[]> => {
+		): Promise<coffee[] | string[]> => {
 		try {
 			const response = await fetch(url, {method, body, headers});
 
@@ -25,7 +22,7 @@ export const useHttp = () => {
 				throw new Error(`Error! status: ${response.status}`);
 		  	}
 	  
-			const result = (await response.json()) as GetRequestResponse;
+			const result = (await response.json()) as coffee[];
 	  
 			// console.log('result is: ', JSON.stringify(result, null, 4));
 	  
@@ -35,8 +32,8 @@ export const useHttp = () => {
 			console.log('error message: ', error.message);
 			return [error.message];
 		  } else {
-			console.log('unexpected error: ', error);
-			return ['An unexpected error occurred'];
+				console.log('unexpected error: ', error);
+				return ['An unexpected error occurred'];
 		  }
 		}
 		

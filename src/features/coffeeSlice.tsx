@@ -1,7 +1,5 @@
-import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import { useHttp } from "../../hooks/http.hook";
-import GetRequestResponse from '../../hooks/http.hook';
-// import coffee from '../../hooks/http.hook';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { useHttp } from "../hooks/http.hook";
 
 interface coffee {
     id: number;
@@ -14,7 +12,7 @@ interface coffee {
 
 interface CoffeeState {
     data: coffee[];
-    status: 'idle' | 'loading' | 'failed';
+    status: true | false;
     error: string | null;
 }
 
@@ -29,11 +27,9 @@ export const fetchCoffee = createAsyncThunk(
 
 const initialState = {
     data: [],
-    status: 'idle',
+    status: false,
     error: null,
 } as CoffeeState
-
-console.log('initialState', initialState)
 
 
 export const  coffeeSlice = createSlice({
@@ -42,16 +38,14 @@ export const  coffeeSlice = createSlice({
     reducers:{},
     extraReducers: (builder) => {
         builder 
-            .addCase(fetchCoffee.pending, state => {state.status = 'loading'})
+            .addCase(fetchCoffee.pending, state => {state.status = true})
             .addCase(fetchCoffee.fulfilled, (state: CoffeeState, action) => {
-                const payload: coffee[] = action.payload.data
-                state.status = 'idle';
-                // state.data = payload;
-                
+                state.status = false;
+                state.data = action.payload as coffee[];
             })
             .addCase(fetchCoffee.rejected, (state: CoffeeState, action) => {
-                state.status = 'failed';
-                state.error = action.error.message; 
+                state.status = true;
+                state.error = action.error.message as string; 
             })
             .addDefaultCase(() => {});
     }

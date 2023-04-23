@@ -1,15 +1,17 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchCoffee } from './coffeeSlice';
+import { fetchCoffee } from '../../features/coffeeSlice';
 import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../hooks/reduxHook';
 
 import './coffeeProducts.scss';
 
 import Skeleton from '../skeleton/Skeleton';
+import { RootState } from '../../store';
 
 const CoffeeProducts = () => {
-    const dispatch = useDispatch();
-    const loadingStatus = useSelector(state => state.coffee.status);
-    const coffeeData = useSelector(state => state.coffee.coffeeData);
+
+    const dispatch = useAppDispatch();
+    const loadingStatus = useAppSelector((state: RootState) => state.coffee.status);
+    const coffeeData = useAppSelector((state: RootState) => state.coffee.data);
 
 
     useEffect(() => {
@@ -27,7 +29,6 @@ const CoffeeProducts = () => {
             </div>  
         )
     })
-
     return (
         <div className="product">
             <div className='product__wrapper'>
