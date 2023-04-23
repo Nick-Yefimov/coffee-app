@@ -1,5 +1,6 @@
 import whiteBeans from '../../resources/img/coffe-beans-white.png';
 
+
 import NavBar from '../navBar/NavBar';
 
 import './aboutCoffee.scss';
