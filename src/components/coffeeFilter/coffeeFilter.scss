@@ -42,5 +42,10 @@
         box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
         border-radius: 4px 0px 0px 4px;
         border: none;
+        cursor: pointer;
     }
+}
+
+.active {
+    background-color: grey;
 }

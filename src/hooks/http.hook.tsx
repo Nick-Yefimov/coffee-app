@@ -1,11 +1,17 @@
-interface coffee {
-  id: number;
+export interface coffee {
+  id: number | string;
   title: string;
   price: number;
   country: string;
   image: string;
   description: string;
 };
+
+export interface filter {
+	id: string;
+	label: string;
+	name: string;
+}
 
 
 export const useHttp = () => {
@@ -14,7 +20,7 @@ export const useHttp = () => {
 		method: 'GET' | 'POST' | 'PUT' | 'DELETE' = 'GET', 
 		body = null, 
 		headers = {Accept: 'application/json'}
-		): Promise<coffee[] | string[]> => {
+		): Promise<coffee[] | filter[] | string[]> => {
 		try {
 			const response = await fetch(url, {method, body, headers});
 
@@ -22,7 +28,7 @@ export const useHttp = () => {
 				throw new Error(`Error! status: ${response.status}`);
 		  	}
 	  
-			const result = (await response.json()) as coffee[];
+			const result = (await response.json()) as coffee[] | filter[];
 	  
 			// console.log('result is: ', JSON.stringify(result, null, 4));
 	  
@@ -41,5 +47,4 @@ export const useHttp = () => {
 	return {request}
 }
 
-export default coffee;
 
