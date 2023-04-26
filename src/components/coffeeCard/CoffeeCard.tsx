@@ -1,4 +1,4 @@
-import coffee from "../../hooks/http.hook";
+import {coffee} from "../../hooks/http.hook";
 import './coffeeCard.scss';
 
 const CoffeeCard: React.FC<coffee> = ({ image, title, price }: coffee) => {

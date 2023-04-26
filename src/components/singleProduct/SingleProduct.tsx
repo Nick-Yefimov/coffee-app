@@ -1,4 +1,4 @@
-import coffee from '../../hooks/http.hook';
+import {coffee} from '../../hooks/http.hook';
 import black from '../../resources/img/coffe-logo-black.png';
 import './singleProduct.scss';
 import { useLocation } from 'react-router';

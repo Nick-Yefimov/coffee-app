@@ -48,5 +48,27 @@
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             "price": "16.99"
         }
+    ],
+    "filters": [
+        {
+            "id": "all",
+            "name": "all",
+            "label": "all"
+        },
+        {
+            "id": "Brasil",
+            "name": "Brasil",
+            "label": "Brasil"
+        },
+        {
+            "id": "Kenya",
+            "name": "Kenya",
+            "label": "Kenya"
+        },
+        {
+            "id": "Columbia",
+            "name": "Columbia",
+            "label": "Columbia"
+        }
     ]
 }

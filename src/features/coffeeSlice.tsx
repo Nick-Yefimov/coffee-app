@@ -1,14 +1,6 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { useHttp } from "../hooks/http.hook";
-
-interface coffee {
-    id: number;
-    title: string;
-    price: number;
-    country: string;
-    image: string;
-    description: string;
-}
+import { createSlice, createAsyncThunk, createSelector } from "@reduxjs/toolkit";
+import { useHttp, coffee } from "../hooks/http.hook";
+import { RootState } from "../store";
 
 interface CoffeeState {
     data: coffee[];
@@ -52,3 +44,18 @@ export const  coffeeSlice = createSlice({
 })
 
 export default coffeeSlice.reducer;
+
+export const filterCoffeeProducts = createSelector( 
+    (state: RootState) => state.filter.activeFilter,
+    (state: RootState) => state.coffee.data,
+    (filter, coffee) => {
+        if (filter === 'all') {
+            return coffee;
+        } else {
+            return coffee.filter((item: coffee) => item.country === filter)
+        }
+    }
+)
+
+
+
