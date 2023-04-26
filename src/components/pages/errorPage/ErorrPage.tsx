@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import './errorPage.scss';
 
-const ErorrPage = () => {
+const ErorrPage: React.FC = () => {
     return (
         <div className="container">
 			<h1 className='title'>Oops,page is not found!</h1>

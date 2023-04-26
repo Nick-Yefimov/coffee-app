@@ -1,23 +1,13 @@
-import { fetchCoffee } from '../../features/coffeeSlice';
-import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../hooks/reduxHook';
+import { useAppSelector } from '../../hooks/reduxHook';
 
 import './coffeeProducts.scss';
 
 import Skeleton from '../skeleton/Skeleton';
 import { filterCoffeeProducts } from '../../features/coffeeSlice';
-import SingleProduct from '../singleProduct/SingleProduct';
-
 
 const CoffeeProducts = () => {
-    const dispatch = useAppDispatch();
     const { status} = useAppSelector(state => state.coffee);
     const filteredCoffeeProducts = useAppSelector(filterCoffeeProducts)
-
-    useEffect(() => {
-        dispatch(fetchCoffee());
-    }, [])
-
 
     const skeleton: JSX.Element[] = [...new Array(6)].map((i) => <Skeleton key={i}/>)
     const products = filteredCoffeeProducts.map(({id, title, country, price, image}) => {

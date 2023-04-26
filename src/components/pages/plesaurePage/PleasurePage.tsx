@@ -8,7 +8,7 @@ import black from '../../../resources/img/coffe-logo-black.png'
 import './pleasurePage.scss';
 
 
-const PleasurePage = () => {
+const PleasurePage: React.FC = () => {
     return (
         <>
             <CoffeeHeader/>

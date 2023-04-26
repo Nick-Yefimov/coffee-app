@@ -3,7 +3,7 @@ import CoffeeHeader from "../../coffeeHeader/CoffeeHeader";
 import CoffeeFilter from '../../coffeeFilter/CoffeeFilter';
 import CoffeeProducts from '../../coffeeProducts/CoffeeProducts';
 
-const CoffeePage = () => {
+const CoffeePage: React.FC = () => {
     return (
         <div>
             <CoffeeHeader/>

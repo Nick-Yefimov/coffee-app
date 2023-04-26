@@ -4,7 +4,7 @@ import CoffeeBest from '../../coffeeBest/CoffeeBest';
 import Footer from '../../footer/Footer';
 
 
-const MainPage = () => {
+const MainPage: React.FC = () => {
     return (
         <>
             <AboutCoffee/>

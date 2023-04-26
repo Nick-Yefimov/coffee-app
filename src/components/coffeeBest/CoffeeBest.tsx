@@ -1,7 +1,5 @@
 import { RootState } from '../../store';
-import { useEffect } from 'react';
-import { fetchCoffee } from '../../features/coffeeSlice';
-import { useAppDispatch, useAppSelector } from '../../hooks/reduxHook';
+import { useAppSelector } from '../../hooks/reduxHook';
 import { Link } from 'react-router-dom';
 import { coffee } from '../../hooks/http.hook';
 
@@ -10,14 +8,7 @@ import CoffeeCard from '../coffeeCard/CoffeeCard';
 import './coffeeBest.scss';
 
 const CoffeeBest: React.FC = () => {
-
-    const dispatch = useAppDispatch();
-    const coffeeData: coffee[] = useAppSelector((state: RootState) => state.coffee.data);
-
-
-    useEffect(() => {
-        dispatch(fetchCoffee());
-    }, [])
+    const coffeeData: coffee[] = useAppSelector(({ coffee }: RootState) => coffee.data);
     
     return (
         <div className='coffee'>
