@@ -4,7 +4,7 @@ import './footer.scss';
 
 import { Link } from 'react-router-dom';
 
-const Footer = () => {
+const Footer: React.FC = () => {
     return (
 		<div className='container'>
 			<div className='footer'>

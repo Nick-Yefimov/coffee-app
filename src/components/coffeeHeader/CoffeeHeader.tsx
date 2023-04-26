@@ -1,7 +1,7 @@
 import NavBar from '../navBar/NavBar';
 import './coffeeHeader.scss';
 
-const CoffeeHeader = () => {
+const CoffeeHeader: React.FC = () => {
     return (
 			<div className='header'>
 				<NavBar/>

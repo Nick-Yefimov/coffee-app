@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './navBar.scss';
 
-const NavBar = () => {
+const NavBar: React.FC = () => {
     return (
         <div className="nav">
             <img src={coffeeBeans} alt="logo" />
