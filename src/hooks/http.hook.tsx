@@ -9,8 +9,15 @@ export interface coffee {
 
 export interface filter {
 	id: string;
-	label: string;
+	label: FilterButtonsState;
 	name: string;
+}
+
+export enum FilterButtonsState {
+	ALL = 'All',
+	BRASIL = 'Brasil',
+	KENYA = 'Kenya',
+	COLUMBIA = 'Columbia'
 }
 
 
