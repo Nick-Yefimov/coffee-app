@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk, createSelector } from "@reduxjs/toolkit";
-import { useHttp, coffee } from "../hooks/http.hook";
+import { useHttp, coffee, FilterButtonsState } from "../hooks/http.hook";
 import { RootState } from "../store";
 
 interface CoffeeState {
@@ -48,12 +48,11 @@ export default coffeeSlice.reducer;
 export const filterCoffeeProducts = createSelector( 
     (state: RootState) => state.filter.activeFilter,
     (state: RootState) => state.coffee.data,
-    (filter, coffee) => {
-        if (filter === 'all') {
+    (filter: FilterButtonsState | string, coffee: coffee[]): coffee[] => {
+        if(filter === FilterButtonsState.ALL) {
             return coffee;
-        } else {
-            return coffee.filter((item: coffee) => item.country === filter)
         }
+        return coffee.filter(({ country }: coffee) => country.toLocaleLowerCase().includes(filter.toLocaleLowerCase()))
     }
 )
 

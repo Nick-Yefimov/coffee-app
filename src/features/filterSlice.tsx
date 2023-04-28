@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { useHttp } from "../hooks/http.hook";
+import { FilterButtonsState, useHttp } from "../hooks/http.hook";
 import { filter } from '../hooks/http.hook';
 
 export interface FilterState {
     data: filter[],
-    activeFilter: string,
+    activeFilter: FilterButtonsState | string,
     status: boolean,
     error: null | string,
 }
@@ -19,7 +19,7 @@ export const fetchFilter = createAsyncThunk(
 
 const initialState = {
     data: [],
-    activeFilter: 'all',
+    activeFilter: FilterButtonsState.ALL,
     status: false,
     error: null,
 } as FilterState

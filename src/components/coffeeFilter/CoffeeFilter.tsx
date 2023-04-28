@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHook';
 import {  fetchFilter, filterChanged } from '../../features/filterSlice';
-import { useEffect } from 'react';
+import { ChangeEvent, ChangeEventHandler, FormEvent, FormEventHandler, useEffect } from 'react';
 import classNames from 'classnames';
 
 import Spinner from '../spinner/Spinner';
@@ -13,7 +13,12 @@ const CoffeeFilter = () => {
 
     useEffect(() => {
         dispatch(fetchFilter());
-    }, [])
+    }, []);
+
+    const searchTypingHandler = (event: ChangeEvent<HTMLInputElement>) => {
+        const value: string = event.target.value;
+        dispatch(filterChanged(value));
+    }
 
 
 
@@ -37,7 +42,7 @@ const CoffeeFilter = () => {
             <div className="filter__wrapper">
                 <div className="filter__input">
                     <p className="filter__title">Looking for</p>
-                    <input className='filter__search' type="text" placeholder="start typing here..."/>
+                    <input className='filter__search' type="text" onInput={searchTypingHandler} placeholder="start typing here..."/>
                 </div>
                 <div className="filter__tabs">
                     <p className="filter__title">Or filter</p>

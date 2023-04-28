@@ -51,9 +51,9 @@
     ],
     "filters": [
         {
-            "id": "all",
-            "name": "all",
-            "label": "all"
+            "id": "All",
+            "name": "All",
+            "label": "All"
         },
         {
             "id": "Brasil",
