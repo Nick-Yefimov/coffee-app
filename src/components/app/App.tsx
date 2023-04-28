@@ -2,14 +2,14 @@ import MainPage from "../pages/mainPage/MainPage";
 import CoffeePage from "../pages/coffeePage/CoffeePage";
 import PleasurePage from "../pages/plesaurePage/PleasurePage";
 import ErrorPage from '../pages/errorPage/ErorrPage';
+import SingleCoffeePage from "../pages/singleCoffeePage/SingleCoffeePage";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
-import "../../style/style.scss";
-import SingleProduct from "../singleProduct/SingleProduct";
 import { useAppDispatch } from "../../hooks/reduxHook";
 import { fetchCoffee } from "../../features/coffeeSlice";
 import React, { useEffect } from "react";
+
+import "../../style/style.scss";
 
 const App: React.FC = () => {
 
@@ -26,7 +26,7 @@ const App: React.FC = () => {
                 <Route path='/ourCoffee' element={<CoffeePage/>}/>
                 <Route path='/coffeePleasure' element={<PleasurePage/>}/>
                 <Route path='*' element={<ErrorPage/>}/>
-                <Route path='/singleProduct/:id' element={<SingleProduct />} />
+                <Route path='/singleProduct/:id' element={<SingleCoffeePage />} />
 			</Routes>
         </Router>
     )
