@@ -12,6 +12,12 @@
         font-weight: 700;
         font-size: 40px;
         color: #FFFFFF;
+        @media(max-width: 720px) {
+            font-size: 28px;
+        }
+        @media(max-width: 430px) {
+            font-size: 17px;
+        }
     }
     &__inner {
         display: grid;
@@ -45,6 +51,9 @@
             margin-top: 34px;
             color: #fff;
             font-size: 24px;
+            @media(max-width: 720px) {
+                font-size: 13px;
+            }
         }
         &__text {
             text-align: center;
@@ -52,6 +61,12 @@
             color: #fff;
             font-size: 24px;
             font-weight: 700;
+            @media(max-width: 720px) {
+                font-size: 18px;
+            }
+            @media(max-width: 350px) {
+                font-size: 13px;
+            }
         }
     }
 }

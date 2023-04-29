@@ -9,6 +9,7 @@ import './coffeeBest.scss';
 
 const CoffeeBest: React.FC = () => {
     const coffeeData: coffee[] = useAppSelector(({ coffee }: RootState) => coffee.data);
+    const limitBestCoffee: coffee[] = coffeeData.slice(0, 3);
     
     return (
         <div className='coffee'>
@@ -16,7 +17,16 @@ const CoffeeBest: React.FC = () => {
                 <h2 className='coffee__text'>Our Best </h2>
             </div>
             <div className='coffee__wrapper'>
-                { coffeeData.map((coffeeCard: coffee) => <Link to={`/singleProduct/${coffeeCard.id}`} state={coffeeCard}> <CoffeeCard { ...coffeeCard } key={coffeeCard.id} /> </Link>) }
+                {limitBestCoffee.map((coffeeCard: coffee) => 
+                    <Link
+                        className='link' 
+                        to={`/singleProduct/${coffeeCard.id}`} 
+                        state={coffeeCard}> 
+                        <CoffeeCard 
+                        { ...coffeeCard } 
+                        key={coffeeCard.id} /> 
+                    </Link>) 
+                }
             </div>
         </div>
     )

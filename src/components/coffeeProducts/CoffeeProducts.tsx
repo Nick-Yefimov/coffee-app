@@ -24,9 +24,9 @@ const CoffeeProducts = () => {
     return (
         <div className="product">
             <div className='product__wrapper'>
-            {status ? skeleton : products}
+                {status ? skeleton : products}
             </div>
-        </div>
+         </div>
     )
 }
 
