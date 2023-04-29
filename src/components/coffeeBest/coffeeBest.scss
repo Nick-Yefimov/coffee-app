@@ -6,8 +6,10 @@
         display: grid;
         grid-template-columns: repeat(3, 0fr);
         grid-auto-rows: auto;
-        grid-gap: 1rem;
         justify-content: center;
+        @media(max-width: 890px) {
+            grid-template-columns: repeat(1, 0fr);
+        }
     }
     &__title {
         display: flex;

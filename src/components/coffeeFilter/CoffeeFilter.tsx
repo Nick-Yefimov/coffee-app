@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHook';
-import {  fetchFilter, filterChanged } from '../../features/filterSlice';
-import { ChangeEvent, ChangeEventHandler, FormEvent, FormEventHandler, useEffect } from 'react';
+import { fetchFilter, filterChanged } from '../../features/filterSlice';
+import { ChangeEvent, useEffect } from 'react';
 import classNames from 'classnames';
 
 import Spinner from '../spinner/Spinner';

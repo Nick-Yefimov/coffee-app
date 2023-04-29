@@ -11,7 +11,7 @@ const SingleProduct: React.FC = () => {
 
     return (                       
       <div className='single'>
-            <img src={image} alt="beans" className='single__img'/>
+        <img src={image} alt="beans" className='single__img'/>
             <div className='single__wrapper'>
                 <h2 className='single__title'>About it</h2>
                 <div className='inner'>
