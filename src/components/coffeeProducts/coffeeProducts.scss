@@ -52,3 +52,33 @@
 .link {
     text-decoration: none;
 }
+
+.card-exit-active {
+    opacity: 0.5;
+    animation: fade-out 1000ms forwards;
+}
+.card-active {
+    opacity: 1;
+    animation: fade-in 1000ms forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 1;
+        transform: translateX(100px);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }  
+}
+@keyframes fade-out {
+    0% {
+        opacity: 0.5;
+        transform: translateX(-200px);
+    } 
+    100% {
+        opacity: 0.5;
+        transform: translateX(0);
+    }  
+}
