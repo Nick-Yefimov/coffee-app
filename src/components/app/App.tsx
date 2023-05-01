@@ -6,7 +6,7 @@ import SingleCoffeePage from "../pages/singleCoffeePage/SingleCoffeePage";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useAppDispatch } from "../../hooks/reduxHook";
-import { fetchCoffee } from "../../features/coffeeSlice";
+import { fetchCoffee } from "../../store/slices/coffeeSlice";
 import React, { useEffect } from "react";
 
 import "../../style/style.scss";

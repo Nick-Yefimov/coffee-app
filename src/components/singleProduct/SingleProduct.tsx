@@ -1,4 +1,4 @@
-import {coffee} from '../../hooks/http.hook';
+import { Coffee } from '../../models/coffee';
 import black from '../../resources/img/coffe-logo-black.png';
 import './singleProduct.scss';
 import { useLocation } from 'react-router';
@@ -7,7 +7,7 @@ import { useLocation } from 'react-router';
 const SingleProduct: React.FC = () => {
 
     const { state } = useLocation();
-    const { image, country, description, price } = state as coffee;
+    const { image, country, description, price } = state as Coffee;
 
     return (                       
       <div className='single'>

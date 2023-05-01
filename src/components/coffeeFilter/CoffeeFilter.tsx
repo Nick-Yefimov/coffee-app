@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHook';
-import { fetchFilter, filterChanged } from '../../features/filterSlice';
+import { fetchFilter, filterChanged } from '../../store/slices/filterSlice';
 import { ChangeEvent, useEffect } from 'react';
 import classNames from 'classnames';
 

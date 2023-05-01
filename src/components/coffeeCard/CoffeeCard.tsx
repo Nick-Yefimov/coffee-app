@@ -1,7 +1,7 @@
-import {coffee} from "../../hooks/http.hook";
+import { Coffee } from '../../models/coffee';
 import './coffeeCard.scss';
 
-const CoffeeCard: React.FC<coffee> = ({ image, title, price }: coffee) => {
+const CoffeeCard: React.FC<Coffee> = ({ image, title, price }: Coffee) => {
     return (
         <div className='coffee__card'>
             <img src={image} alt="solimo" className='coffee__logo' />
