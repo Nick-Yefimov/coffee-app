@@ -1,4 +1,5 @@
 import { useAppSelector } from '../../hooks/reduxHook';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import './coffeeProducts.scss';
 
@@ -12,12 +13,20 @@ const CoffeeProducts = () => {
     const skeleton: JSX.Element[] = [...new Array(6)].map((i) => <Skeleton key={i}/>)
     const products = filteredCoffeeProducts.map(({id, title, country, price, image}) => {
             return (
-                <div className='product__card' key={id}>
-                    <img src={image} alt={title} className='product__logo'/>
-                    <p className='product__name'>{title}</p>
-                    <p className='product__region'>{country}</p>
-                    <p className='product__price'>{price}$</p>
-                </div>  
+                <TransitionGroup component='div'>
+                    <CSSTransition
+                        key={id}
+                        timeout={0}
+                        exit={false}
+                        className='product__card card-exit-active card-active'>
+                        <div className='product__card' key={id}>
+                            <img src={image} alt={title} className='product__logo'/>
+                            <p className='product__name'>{title}</p>
+                            <p className='product__region'>{country}</p>
+                            <p className='product__price'>{price}$</p>
+                        </div>  
+                    </CSSTransition>
+                </TransitionGroup>
             ) 
     })
 
