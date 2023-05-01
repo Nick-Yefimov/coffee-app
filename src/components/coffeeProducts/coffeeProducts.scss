@@ -7,7 +7,7 @@
         display: grid;
         grid-template-columns: repeat(3, 0fr);
         grid-auto-rows: auto;
-        grid-gap: 1rem;
+        gap: 70px;
         @media(max-width: 750px) {
             grid-template-columns: repeat(2, 0fr);
         }
