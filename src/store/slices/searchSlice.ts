@@ -11,8 +11,8 @@ export const searchSlice = createSlice({
     name: 'searchString',
     initialState,
     reducers: {
-        searchStringChanged: ({ searchString }: SearchState, action) => {
-            searchString = action.payload;
+        searchStringChanged: (searchState: SearchState, action) => {
+            searchState.searchString = action.payload;
         }
     },
 });

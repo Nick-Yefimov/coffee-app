@@ -1,25 +1,21 @@
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHook';
-import { fetchFilter, filterChanged } from '../../store/slices/filterSlice';
-import { ChangeEvent, useEffect } from 'react';
+import { filterChanged } from '../../store/slices/filterSlice';
+import { ChangeEvent } from 'react';
 import classNames from 'classnames';
 
 import Spinner from '../spinner/Spinner';
 
 import './coffeeFilter.scss';
+import { searchStringChanged } from '../../store/slices/searchSlice';
 
 const CoffeeFilter = () => {
     const dispatch = useAppDispatch();
-    const {status, activeFilter, data} = useAppSelector(state => state.filter)
+    const {status, activeFilter, data} = useAppSelector(state => state.filter);
 
-    useEffect(() => {
-        dispatch(fetchFilter());
-    }, []);
 
     const searchTypingHandler = (event: ChangeEvent<HTMLInputElement>) => {
-        const value: string = event.target.value;
-        dispatch(filterChanged(value));
+        dispatch(searchStringChanged(event.target.value));
     }
-
 
 
     const spinner: JSX.Element | null = status ? <Spinner/> : null;
