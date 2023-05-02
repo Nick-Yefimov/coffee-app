@@ -1,13 +1,6 @@
-import { createSlice, createAsyncThunk, createSelector } from "@reduxjs/toolkit";
-import { useHttp, coffee, FilterButtonsState } from "../hooks/http.hook";
-import { RootState } from "../store";
-
-interface CoffeeState {
-    data: coffee[];
-    status: boolean;
-    error: string | null;
-}
-
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { useHttp } from "../../hooks/http.hook";
+import { Coffee, CoffeeState } from "../../models/coffee";
 
 export const fetchCoffee = createAsyncThunk(
     'coffee/fetchCoffee',
@@ -23,7 +16,6 @@ const initialState = {
     error: null,
 } as CoffeeState
 
-
 export const  coffeeSlice = createSlice({
     name: 'coffee',
     initialState,
@@ -33,7 +25,7 @@ export const  coffeeSlice = createSlice({
             .addCase(fetchCoffee.pending, state => {state.status = true})
             .addCase(fetchCoffee.fulfilled, (state: CoffeeState, action) => {
                 state.status = false;
-                state.data = action.payload as coffee[];
+                state.data = action.payload as Coffee[];
             })
             .addCase(fetchCoffee.rejected, (state: CoffeeState, action) => {
                 state.status = false;
@@ -44,17 +36,6 @@ export const  coffeeSlice = createSlice({
 })
 
 export default coffeeSlice.reducer;
-
-export const filterCoffeeProducts = createSelector( 
-    (state: RootState) => state.filter.activeFilter,
-    (state: RootState) => state.coffee.data,
-    (filter: FilterButtonsState | string, coffee: coffee[]): coffee[] => {
-        if(filter === FilterButtonsState.ALL) {
-            return coffee;
-        }
-        return coffee.filter(({ country }: coffee) => country.toLocaleLowerCase().includes(filter.toLocaleLowerCase()))
-    }
-)
 
 
 

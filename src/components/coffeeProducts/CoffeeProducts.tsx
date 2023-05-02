@@ -4,14 +4,21 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './coffeeProducts.scss';
 
 import Skeleton from '../skeleton/Skeleton';
-import { filterCoffeeProducts } from '../../features/coffeeSlice';
+import { filteredCoffeeSelector } from '../../store/selectors/coffee.selector';
+import { searchStringSelector } from '../../store/selectors/search.selector';
+import { getCoffeeBySearch } from '../../utils/coffee-search.utils';
+import { Coffee } from '../../models/coffee';
 
-const CoffeeProducts = () => {
+interface CoffeeProps {
+    coffee: Coffee[];
+}
+
+const CoffeeProducts: React.FC<CoffeeProps> = ({ coffee }: CoffeeProps) => {
     const { status} = useAppSelector(state => state.coffee);
-    const filteredCoffeeProducts = useAppSelector(filterCoffeeProducts)
 
-    const skeleton: JSX.Element[] = [...new Array(6)].map((i) => <Skeleton key={i}/>)
-    const products = filteredCoffeeProducts.map(({id, title, country, price, image}) => {
+
+    const skeleton: JSX.Element[] = [...new Array(6)].map((index: number) => <Skeleton key={index}/>)
+    const products: JSX.Element[] = coffee.map(({id, title, country, price, image}) => {
             return (
                 <TransitionGroup component='div'>
                     <CSSTransition
@@ -28,7 +35,7 @@ const CoffeeProducts = () => {
                     </CSSTransition>
                 </TransitionGroup>
             ) 
-    })
+    });
 
     return (
         <div className="product">

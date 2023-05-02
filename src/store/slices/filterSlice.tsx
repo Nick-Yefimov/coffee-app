@@ -1,13 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { FilterButtonsState, useHttp } from "../hooks/http.hook";
-import { filter } from '../hooks/http.hook';
+import { useHttp } from "../../hooks/http.hook";
+import { Filter, FilterButtonsState, FilterState } from "../../models/filter";
 
-export interface FilterState {
-    data: filter[],
-    activeFilter: FilterButtonsState | string,
-    status: boolean,
-    error: null | string,
-}
 
 export const fetchFilter = createAsyncThunk(
     'filter/fetchFilter',
@@ -37,7 +31,7 @@ export const filterSlice = createSlice({
             .addCase(fetchFilter.pending, state => {state.status = true})
             .addCase(fetchFilter.fulfilled, (state: FilterState, action) => {
                 state.status = false;
-                state.data = action.payload as filter[];         
+                state.data = action.payload as Filter[];         
             })
             .addCase(fetchFilter.rejected, (state: FilterState, action) => {
                 state.status = false;

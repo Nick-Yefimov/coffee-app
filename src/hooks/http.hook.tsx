@@ -1,24 +1,5 @@
-export interface coffee {
-  id: number | string;
-  title: string;
-  price: number;
-  country: string;
-  image: string;
-  description: string;
-};
-
-export interface filter {
-	id: string;
-	label: FilterButtonsState;
-	name: string;
-}
-
-export enum FilterButtonsState {
-	ALL = 'All',
-	BRASIL = 'Brasil',
-	KENYA = 'Kenya',
-	COLUMBIA = 'Columbia'
-}
+import { Coffee } from "../models/coffee";
+import { Filter } from "../models/filter";
 
 
 export const useHttp = () => {
@@ -27,7 +8,7 @@ export const useHttp = () => {
 		method: 'GET' | 'POST' | 'PUT' | 'DELETE' = 'GET', 
 		body = null, 
 		headers = {Accept: 'application/json'}
-		): Promise<coffee[] | filter[] | string[]> => {
+		): Promise<Coffee[] | Filter[] | string[]> => {
 		try {
 			const response = await fetch(url, {method, body, headers});
 
@@ -35,17 +16,13 @@ export const useHttp = () => {
 				throw new Error(`Error! status: ${response.status}`);
 		  	}
 	  
-			const result = (await response.json()) as coffee[] | filter[];
-	  
-			// console.log('result is: ', JSON.stringify(result, null, 4));
+			const result = (await response.json()) as Coffee[] | Filter[];
 	  
 			return result;
 		} catch (error) {
 		  if (error instanceof Error) {
-			console.log('error message: ', error.message);
 			return [error.message];
 		  } else {
-				console.log('unexpected error: ', error);
 				return ['An unexpected error occurred'];
 		  }
 		}

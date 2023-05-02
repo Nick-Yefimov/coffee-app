@@ -1,15 +1,15 @@
 import { RootState } from '../../store';
 import { useAppSelector } from '../../hooks/reduxHook';
 import { Link } from 'react-router-dom';
-import { coffee } from '../../hooks/http.hook';
 
 import CoffeeCard from '../coffeeCard/CoffeeCard';
 
 import './coffeeBest.scss';
+import { Coffee } from '../../models/coffee';
+import { getCoffeeByLimitSelector } from '../../store/selectors/coffee.selector';
 
 const CoffeeBest: React.FC = () => {
-    const coffeeData: coffee[] = useAppSelector(({ coffee }: RootState) => coffee.data);
-    const limitBestCoffee: coffee[] = coffeeData.slice(0, 3);
+    const coffeeData: Coffee[] = useAppSelector(getCoffeeByLimitSelector(3));
     
     return (
         <div className='coffee'>
@@ -17,7 +17,7 @@ const CoffeeBest: React.FC = () => {
                 <h2 className='coffee__text'>Our Best </h2>
             </div>
             <div className='coffee__wrapper'>
-                {limitBestCoffee.map((coffeeCard: coffee) => 
+                {coffeeData.map((coffeeCard: Coffee) => 
                     <Link
                         className='link' 
                         to={`/singleProduct/${coffeeCard.id}`} 
